@@ -9,10 +9,14 @@ export class Faq extends Component {
           <div className='collapse collapse-arrow join-item border border-base-200'>
             <input type='radio' name='my-accordion-4' defaultChecked />
             <div className='collapse-title text-xl font-medium'>
-              Click to open this one and close others
+              Simple tutorial
             </div>
             <div className='collapse-content'>
-              <p className='text-slate-500 '>hello</p>
+              <p className='text-slate-500 '>
+                {" "}
+                Just type your Security code in the box,the radio code is the
+                one greyd-out
+              </p>
             </div>
           </div>
           <div className='collapse collapse-arrow join-item border border-base-200'>
