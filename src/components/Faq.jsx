@@ -14,7 +14,7 @@ export class Faq extends Component {
             <div className='collapse-content'>
               <p className='text-slate-500 '>
                 {" "}
-                Just type your Security code in the box,the radio code is the
+                Just type your Security code in the box, the radio code is the
                 green one
               </p>
             </div>

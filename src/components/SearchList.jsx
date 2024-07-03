@@ -27,6 +27,7 @@ const ContactList = () => {
 
   return (
     <div className='holder'>
+      <h1 className='text-3xl mb-2'>Renault Radio Code generator</h1>
       <input
         type='text'
         placeholder='Type here'
