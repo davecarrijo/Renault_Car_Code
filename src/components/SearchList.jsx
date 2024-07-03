@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchFeature from "./Nice_codes";
 
 // Importe the hole list
@@ -7,9 +7,8 @@ const Arr_Codes = SearchFeature();
 const Contact = (props) => {
   return (
     <li>
-      {/* <img src={props.image} alt="img" /> */}
-      <span>{props.name}</span>
-      <span className='phone'>{props.phone}</span>
+      <span>{props.Security_code}</span>
+      <span className='Radio_code'>{props.Radio_code}</span>
     </li>
   );
 };
@@ -18,10 +17,10 @@ const ContactList = () => {
   const [contacts, setContacts] = useState(Arr_Codes);
 
   const searchHandler = (event) => {
-    let searcjQery = event.target.value.toLowerCase(),
-      displayedContacts = Arr_Codes.filter((el) => {
-        let searchValue = el.name.toLowerCase();
-        return searchValue.indexOf(searcjQery) !== -1;
+    let searchJQuery = event.target.value,
+      displayedContacts = Arr_Codes.filter((showData) => {
+        let searchValue = showData.Security_code;
+        return searchValue.indexOf(searchJQuery) !== -1;
       });
     setContacts(displayedContacts);
   };
@@ -34,18 +33,21 @@ const ContactList = () => {
         className='input input-bordered {{right_letter}} w-full max-w-xs mb-5'
         onChange={searchHandler}
       />
-      {/* <input type='text' className='search' onChange={searchHandler} /> */}
-      <ul>
-        {contacts.map((el) => {
-          return (
-            <Contact
-              name={el.name}
-              // //   image={el.image}
-              phone={el.Radio_code}
-            />
-          );
-        })}
-      </ul>
+      <div id='parent'>
+        <div>
+          <ul>
+            {contacts.map((showData) => {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <Contact
+                  Security_code={showData.Security_code}
+                  Radio_code={showData.Radio_code}
+                />
+              );
+            })}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
